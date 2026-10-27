@@ -270,6 +270,14 @@ function AppDrawer({ isExpanded, setIsExpanded, mobileOpen, closeMobileMenu }) {
               <i className="bi bi-filetype-json navicon text-warning"></i>{(isExpanded || mobileOpen) && <span className="nav-text">JSON to Sheet</span>}
             </Link>
           </li>
+          <li className="mb-1">
+            <Link 
+              to="/transcription" 
+              className={`text-white text-decoration-none ${location.pathname === '/transcription' || location.pathname === '/audio-transcriber' || location.pathname === '/multi-language-transcription' ? 'active' : ''}`}
+            >
+              <i className="bi bi-soundwave navicon text-info"></i>{(isExpanded || mobileOpen) && <span className="nav-text">Transcription Tool</span>}
+            </Link>
+          </li>
         </ul>
       </nav>
     </aside>

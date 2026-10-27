@@ -197,6 +197,7 @@ function FloatingBottomNav() {
     { type: 'route', path: '/image-converter', label: 'Converter', icon: 'bi-image' },
     { type: 'route', path: '/drive-to-json', label: 'Drive JSON', icon: 'bi-folder-symlink' },
     { type: 'route', path: '/sheet-to-json', label: 'Sheet JSON', icon: 'bi-file-earmark-spreadsheet' },
+    { type: 'route', path: '/transcription', label: 'Transcribe', icon: 'bi-soundwave' },
     { type: 'route', path: '/admin', label: 'Admin', icon: 'bi-gear' }
   ]
 

@@ -27,6 +27,7 @@ import SheetToJson from './components/SheetToJson'
 import UniversalDataConverter from './components/UniversalDataConverter'
 import ApiSheetJson from './components/ApiSheetJson'
 import PdfToWebp from './components/PdfToWebp'
+import MultiLanguageTranscription from './components/MultiLanguageTranscription'
 import { PdfToolsProvider } from './context/PdfToolsContext'
 import PdfBackgroundToast from './components/PdfBackgroundToast'
 import ReactMarkdown from 'react-markdown'
@@ -821,6 +822,15 @@ function App() {
             } />
             <Route path="/data-converter" element={
               renderLayout(<UniversalDataConverter />)
+            } />
+            <Route path="/transcription" element={
+              renderLayout(<MultiLanguageTranscription />)
+            } />
+            <Route path="/multi-language-transcription" element={
+              renderLayout(<MultiLanguageTranscription />)
+            } />
+            <Route path="/audio-transcriber" element={
+              renderLayout(<MultiLanguageTranscription />)
             } />
             <Route path="/api/sheet-json" element={<ApiSheetJson />} />
             <Route path="/chatbot" element={<ProdhanAIFullPage />} />
