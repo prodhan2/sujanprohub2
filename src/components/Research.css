@@ -1,0 +1,11 @@
+.research {
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .research .container {
+    max-width: 90% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

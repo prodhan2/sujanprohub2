@@ -1,0 +1,23 @@
+.contact-page {
+  min-height: 70vh;
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .contact-page .container {
+    max-width: 90% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-page h2 {
+    font-size: 32px;
+  }
+
+  .contact-page label,
+  .contact-page input,
+  .contact-page textarea,
+  .contact-page button {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,535 @@
+/* PDF to WebP & PNG Splitter Styles */
+.pdf-tool-container {
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 0%, #17243c 0%, #0a0f1d 70%, #04070d 100%);
+  color: #f8fafc;
+  padding-bottom: 80px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Header */
+.pdf-tool-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.pdf-btn-glass {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.pdf-btn-glass:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.pdf-btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #f9532d, #ff7a45);
+  border: none;
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(249, 83, 45, 0.4);
+  transition: all 0.2s ease;
+}
+
+.pdf-btn-action:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(249, 83, 45, 0.6);
+  color: #ffffff;
+}
+
+.pdf-tool-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(30, 41, 59, 0.7);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+}
+
+/* Tabs Navigation Strip */
+.pdf-tab-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 24px;
+  background: rgba(11, 17, 32, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  overflow-x: auto;
+  gap: 12px;
+}
+
+.pdf-tab-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.pdf-tab-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #94a3b8;
+  font-size: 0.84rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.pdf-tab-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+}
+
+.pdf-tab-item.active {
+  background: rgba(249, 83, 45, 0.15);
+  border-color: #f9532d;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(249, 83, 45, 0.25);
+}
+
+.pdf-tab-label {
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pdf-tab-count {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 0.68rem;
+  padding: 1px 6px;
+  border-radius: 9999px;
+  font-family: monospace;
+}
+
+.pdf-tab-close {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.pdf-tab-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ff4d4d;
+}
+
+.pdf-add-tab-btn {
+  background: transparent;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  color: #94a3b8;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.pdf-add-tab-btn:hover {
+  border-color: #f9532d;
+  color: #f9532d;
+  background: rgba(249, 83, 45, 0.05);
+}
+
+/* Workspace */
+.pdf-workspace {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+/* Dropzone Upload Card */
+.pdf-upload-card {
+  max-width: 720px;
+  margin: 40px auto;
+}
+
+.pdf-dropzone {
+  border: 2px dashed rgba(249, 83, 45, 0.4);
+  border-radius: 24px;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(12px);
+  padding: 48px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.pdf-dropzone:hover {
+  border-color: #f9532d;
+  background: rgba(249, 83, 45, 0.06);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dropzone-icon {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+/* Processing & Loading */
+.pdf-processing-card,
+.pdf-error-card {
+  max-width: 540px;
+  margin: 60px auto;
+  padding: 40px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Results Workspace Layout */
+.pdf-results-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pdf-control-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 20px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  flex-wrap: wrap;
+}
+
+/* Pages Grid */
+.pdf-pages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.pdf-page-card {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pdf-page-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(249, 83, 45, 0.5);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(249, 83, 45, 0.2);
+}
+
+.pdf-page-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pdf-page-thumb-wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  background: #090e17;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.pdf-page-thumb {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.25s ease;
+}
+
+.pdf-page-thumb-wrapper:hover .pdf-page-thumb {
+  transform: scale(1.02);
+}
+
+.thumb-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.thumb-hover-overlay i {
+  font-size: 1.8rem;
+  color: #f9532d;
+}
+
+.pdf-page-thumb-wrapper:hover .thumb-hover-overlay {
+  opacity: 1;
+}
+
+.pdf-page-card-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Lightbox Modal */
+.pdf-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 6, 12, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modalFadeIn 0.2s ease;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.pdf-modal-container {
+  width: 95%;
+  max-width: 1000px;
+  max-height: 92vh;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+.pdf-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pdf-modal-body {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #090e17;
+}
+
+.pdf-modal-image {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pdf-tool-header {
+    padding: 12px 16px;
+  }
+  .pdf-tab-strip {
+    padding: 8px 16px;
+  }
+  .pdf-pages-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 14px;
+  }
+  .pdf-page-thumb-wrapper {
+    height: 200px;
+  }
+}
+
+/* Mode Switcher Pill */
+.pdf-mode-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(15, 23, 42, 0.85);
+  padding: 4px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.mode-tab-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.mode-tab-btn:hover {
+  color: #ffffff;
+}
+
+.mode-tab-btn.active {
+  background: linear-gradient(135deg, #f9532d, #ff7a45);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(249, 83, 45, 0.4);
+}
+
+/* PDF Compressor Card */
+.compressor-card {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 28px;
+  margin-top: 10px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+.compressor-presets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.compress-preset-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.compress-preset-box:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(249, 83, 45, 0.4);
+  transform: translateY(-2px);
+}
+
+.compress-preset-box.active {
+  background: rgba(249, 83, 45, 0.1);
+  border-color: #f9532d;
+  box-shadow: 0 0 20px rgba(249, 83, 45, 0.25);
+}
+
+.preset-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+/* Compression Result Card */
+.compression-result-card {
+  background: rgba(10, 16, 28, 0.85);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(34, 197, 94, 0.15);
+}
+
+.result-metric-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.metric-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-arrow {
+  display: flex;
+  align-items: center;
+}
+

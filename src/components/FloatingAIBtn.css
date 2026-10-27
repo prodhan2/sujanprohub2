@@ -1,0 +1,48 @@
+.floating-ai-btn {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+  z-index: 99999;
+  user-select: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.floating-ai-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+}
+
+.floating-ai-btn.dragging {
+  opacity: 0.8;
+}
+
+.ai-btn-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.ai-btn-text {
+  font-weight: 600;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .floating-ai-btn {
+    padding: 12px;
+    border-radius: 50%;
+  }
+  
+  .ai-btn-text {
+    display: none;
+  }
+}

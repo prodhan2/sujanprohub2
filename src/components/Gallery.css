@@ -1,0 +1,130 @@
+.gallery {
+  width: 100%;
+}
+
+.gallery .card {
+  overflow: hidden;
+}
+
+.gallery .card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery .card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+@media (min-width: 769px) {
+  .gallery .container {
+    max-width: 90% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  padding: 20px 25px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+.lightbox-zoom-controls {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.lightbox-zoom-controls button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.lightbox-zoom-controls button:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.lightbox-image-container {
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  transition: transform 0.2s ease-out;
+}
+
+@media (max-width: 768px) {
+  .gallery .card-img-top,
+  .content-tabs img {
+    height: 100px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery .card-img-top,
+  .content-tabs img {
+    height: 80px !important;
+  }
+}

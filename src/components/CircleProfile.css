@@ -1,0 +1,170 @@
+.circle-profile-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.orbit-circle {
+  position: absolute;
+  border: 2px solid #d9d9d9;
+  border-radius: 50%;
+  animation: rotate 30s linear infinite;
+}
+
+.orbit-circle .social-icon-wrapper {
+  animation: float 6s ease-in-out infinite, counter-rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.social-icon-wrapper {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  border: 1px solid #f9532d;
+  transition: transform 0.3s ease;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+  50% { transform: translate(-50%, -50%) translateY(-5px); }
+}
+
+@keyframes counter-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+/* Keep icons upright by ensuring their internal rotation is correct */
+.social-icon-wrapper img {
+  width: 50%;
+  height: 50%;
+  pointer-events: none;
+  transform: rotate(0deg); /* Keep icon itself upright */
+}
+
+.social-icon-wrapper:hover {
+  transform: translate(-50%, -50%) scale(1.15);
+  cursor: pointer;
+}
+
+.social-icon-wrapper img {
+  width: 50%;
+  height: 50%;
+  pointer-events: none;
+}
+
+.profile-image-wrapper {
+  position: relative;
+  z-index: 20;
+}
+
+.profile-image-wrapper img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.profile-shimmer {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+
+.icon-shimmer {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* Responsive styles */
+@media (max-width: 576px) {
+  .circle-profile-container {
+    height: 320px;
+  }
+
+  .social-icon-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .profile-image-wrapper img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .circle-profile-container {
+    height: 380px;
+  }
+
+  .social-icon-wrapper {
+    width: 56px;
+    height: 56px;
+  }
+
+  .profile-image-wrapper img {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 992px) {
+  .circle-profile-container {
+    height: 450px;
+  }
+}
+
+/* Larger screens - bigger profile image */
+@media (min-width: 992px) {
+  .profile-image-wrapper img {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .profile-image-wrapper img {
+    width: 250px;
+    height: 250px;
+  }
+}

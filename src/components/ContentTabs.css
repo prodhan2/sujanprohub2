@@ -1,0 +1,32 @@
+.content-tabs {
+  background-color: #fff;
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .content-tabs .container {
+    max-width: 90% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content-tabs h2 {
+    font-size: 32px;
+  }
+
+  .content-tabs .nav-link {
+    font-size: 20px;
+  }
+
+  .content-tabs .card-title {
+    font-size: 22px;
+  }
+
+  .content-tabs .card-text {
+    font-size: 18px;
+  }
+
+  .content-tabs .btn {
+    font-size: 18px;
+  }
+}

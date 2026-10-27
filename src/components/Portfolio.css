@@ -1,0 +1,16 @@
+.portfolio {
+  background-color: #f8f9fa;
+}
+
+.portfolio-info h4 {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.portfolio-info p {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 0;
+}

@@ -1,0 +1,167 @@
+/* 3D Scene Viewport */
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1100px;
+  overflow: hidden;
+  user-select: none;
+  touch-action: none;
+  transition: background 0.4s ease;
+}
+
+/* Dark Theme (Default) */
+.scene.theme-dark {
+  background: radial-gradient(circle at center, #131d31 0%, #080c14 85%, #030508 100%);
+}
+
+/* Light Theme */
+.scene.theme-light {
+  background: radial-gradient(circle at center, #ffffff 0%, #f1f5f9 85%, #e2e8f0 100%);
+}
+
+/* 3D Floor Grid Effect */
+.scene-grid-floor {
+  position: absolute;
+  bottom: -180px;
+  width: 1200px;
+  height: 1200px;
+  transform: rotateX(80deg);
+  background: radial-gradient(circle, rgba(249, 83, 45, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 3D Cylinder / Carousel Container */
+.box {
+  position: relative;
+  width: 190px;
+  height: 280px;
+  transform-style: preserve-3d;
+  cursor: grab;
+  z-index: 5;
+  transition: transform 0.05s ease-out;
+}
+
+.box.dragging,
+.box.holding-rotate {
+  cursor: grabbing !important;
+}
+
+.box.holding-rotate span img {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 22px rgba(249, 83, 45, 0.45);
+}
+
+/* Individual 3D Image Cards */
+.box span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: filter 0.25s ease, transform 0.25s ease;
+  cursor: pointer;
+  -webkit-box-reflect: below 6px linear-gradient(transparent 65%, rgba(0, 0, 0, 0.3));
+}
+
+.box span:hover {
+  filter: brightness(1.15) contrast(1.05);
+}
+
+.box span img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(249, 83, 45, 0.25);
+  pointer-events: auto;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: #0f172a;
+}
+
+.scene.theme-light .box span img {
+  border: 2px solid rgba(15, 23, 42, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 0 10px rgba(249, 83, 45, 0.2);
+  -webkit-box-reflect: below 6px linear-gradient(transparent 70%, rgba(0, 0, 0, 0.15));
+}
+
+.box span:hover img {
+  border-color: #f9532d;
+  box-shadow: 0 12px 35px rgba(249, 83, 45, 0.45), 0 0 20px rgba(249, 83, 45, 0.6);
+}
+
+/* Center 3D Floating Hologram Badge */
+.center-hologram-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.center-hologram-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #f9532d, #ff8c42, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(249, 83, 45, 0.4));
+  margin: 0;
+}
+
+.center-hologram-sub {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.scene.theme-light .center-hologram-sub {
+  color: #64748b;
+}
+
+/* Responsive Scaling for Mobile Screens */
+@media (max-width: 768px) {
+  .scene {
+    perspective: 850px;
+  }
+  
+  .box {
+    width: 135px;
+    height: 200px;
+  }
+  
+  .center-hologram-text {
+    font-size: 1.15rem;
+  }
+  
+  .center-hologram-sub {
+    font-size: 0.62rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scene {
+    perspective: 750px;
+  }
+  
+  .box {
+    width: 120px;
+    height: 175px;
+  }
+}

@@ -1,0 +1,175 @@
+.app-drawer-toggle-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  align-self: center;
+  display: block; /* Show on desktop */
+}
+
+.app-drawer {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #040b14;
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 999;
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+
+.app-drawer.collapsed {
+  width: 60px;
+  padding: 15px 5px;
+}
+
+.app-drawer .navicon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.app-drawer .nav-text {
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+/* Nav menu item styles */
+.app-drawer .navmenu a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 15px;
+  border-radius: 50px;
+  margin-bottom: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Collapsed nav menu item */
+.app-drawer.collapsed .navmenu a {
+  justify-content: center;
+  padding: 12px 0;
+}
+
+/* Ribbon animation */
+.app-drawer .navmenu a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(249, 83, 45, 0.2), rgba(249, 83, 45, 0.4));
+  transition: width 0.4s ease;
+  border-radius: 50px;
+}
+
+.app-drawer .navmenu a:hover::before {
+  width: 100%;
+}
+
+/* Active state */
+.app-drawer .navmenu a.active {
+  color: #f9532d !important;
+  background: rgba(249, 83, 45, 0.1);
+}
+
+.app-drawer .navmenu a.active::before {
+  width: 100%;
+  background: linear-gradient(90deg, rgba(249, 83, 45, 0.3), rgba(249, 83, 45, 0.15));
+}
+
+.app-drawer .navmenu a.active .navicon {
+  color: #f9532d;
+}
+
+/* Icon and text z-index to stay above ribbon */
+.app-drawer .navmenu a .navicon,
+.app-drawer .navmenu a .nav-text {
+  position: relative;
+  z-index: 1;
+}
+
+/* Custom scrollbar for AppDrawer */
+.app-drawer::-webkit-scrollbar {
+  width: 4px;
+}
+
+.app-drawer::-webkit-scrollbar-track {
+  background: #040b14;
+}
+
+.app-drawer::-webkit-scrollbar-thumb {
+  background: #f9532d;
+  border-radius: 2px;
+}
+
+.app-drawer::-webkit-scrollbar-thumb:hover {
+  background: #ff7a4d;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .app-drawer-toggle-btn {
+    display: none !important;
+  }
+
+  .mobile-close-btn {
+    display: block !important;
+  }
+
+  .app-drawer {
+    width: 250px;
+    transform: translateX(-100%);
+    padding: 20px;
+    padding-top: 80px; /* Space for mobile app bar */
+  }
+
+  .app-drawer.mobile-open {
+    transform: translateX(0);
+    width: 250px !important;
+    padding: 20px !important;
+    padding-top: 80px !important;
+  }
+
+  /* Show nav text always on mobile when drawer is open */
+  .app-drawer.mobile-open .nav-text {
+    display: inline !important;
+    opacity: 1 !important;
+  }
+
+  .app-drawer.mobile-open .navmenu a {
+    justify-content: flex-start !important;
+    padding: 12px 15px !important;
+  }
+
+  .app-drawer .nav-text {
+    display: inline !important; /* Always show text on mobile */
+  }
+
+  .app-drawer.collapsed {
+    width: 250px;
+    padding: 20px;
+    padding-top: 80px;
+  }
+
+  .app-drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    display: none;
+  }
+
+  .app-drawer-overlay.mobile-open {
+    display: block;
+  }
+}

@@ -1,0 +1,20 @@
+.header-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+  font-size: 24px;
+  color: #fff;
+  background: #040b14;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+}
+
+@media (max-width: 991px) {
+  .header-toggle {
+    display: block;
+  }
+}
